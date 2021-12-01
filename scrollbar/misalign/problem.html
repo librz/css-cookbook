@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>misalignment caused by scrollbar</title>
+		<style>
+			body {
+				margin: 0px;
+			}
+			.site-container {
+				margin: 0px;
+				padding: 0px;
+			}
+			.site-header {
+				height: 40px;
+				background-color: blueviolet;
+			}
+			.site-content-container {
+				height: 300px;
+				overflow: auto;
+				height: 300px;
+			}
+			.site-content {
+				background-color: royalblue;
+				color: whitesmoke;
+				height: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="site-container">
+			<div class="site-header"></div>
+			<div class="site-content-container">
+				<div class="site-content">
+					when site-container has vertical scroll bar, it'll cause vertical misalignment with site-header who doesn't have such a scrollbar
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
