@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>overflow content are cut if parent is flexbox & width is not set to fit-content</title>
+		<style>
+			body {
+				margin: 0px;
+			}
+			.container {
+				overflow-x: auto;
+				border: 1px solid purple;
+			}
+			.box-1 {
+				width: 2000px;
+				height: 60px;
+				margin-bottom: 100px;
+				background-color: blueviolet;
+			}
+			.box-2 {
+				display: flex;
+				border: 4px solid black;	
+			}
+			.box-3 {
+				width: 2000px;
+				height: 100px;
+				background-color: teal;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box-1"></div>
+			<div class="box-2">
+				<div class="box-3"></div>
+			</div>
+		</div>
+	</body>
+</html>
