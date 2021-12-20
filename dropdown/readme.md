@@ -13,8 +13,8 @@ here's [an article](https://css-tricks.com/striking-a-balance-between-native-and
 
 #### native tag
 
-1. '<select>' is an html native tag for displaying dropdown, but it's notoriously hard to style
-2. '<menu>' is another html tag, you may think it's probably a dropdown, but it's not. Ref: [MDN menu tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu)
+1. \<select> is an html native tag for displaying dropdown, but it's notoriously hard to style
+2. \<menu> is another html tag, you may think it's probably a dropdown, but it's not. Ref: [MDN menu tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu)
 
 #### custom dropdown not using the native select tag
 
