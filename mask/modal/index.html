@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body {
+      padding: 24px;
+      margin: 0px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 8px 16px;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .mask {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      display: grid;
+      place-items: center;
+      display: none;
+      background-color: rgba(245, 245, 245, 0.6);
+    }
+    .modal-card {
+      width: 400px;
+      height: 500px;
+      background-color: lavender;
+      padding: 24px 48px;
+      position: relative;
+    }
+    .modal-card .close {
+      position: absolute;
+      top: 6px;
+      right: 12px;
+      font-size: 32px;
+      cursor: pointer;
+    }
+    .modal-card .close:hover {
+      font-size: 36px;
+    }
+    .modal-card .header {
+      text-align: center;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <button>Show Modal</button>
+  <div class="mask">
+    <div class="modal-card">
+      <span class="close">&#xd7;</span>
+      <h1 class="header">Info</h1>
+    </div>
+  </div>
+  <script>
+    const button = document.querySelector("button");
+    const mask = document.querySelector(".mask");
+    button.addEventListener("click", () => {
+      mask.style.display = "grid"
+    })
+    const close = document.querySelector(".modal-card .close");
+    close.addEventListener("click", () => {
+      mask.style.display = "none"
+    })
+  </script>
+</body>
+</html>
