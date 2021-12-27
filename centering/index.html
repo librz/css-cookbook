@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Center Child Element</title>
+  <style>
+    * { box-sizing: border-box; }
+    .outter {
+      margin: 50px;
+      width: 400px;
+      height: 200px;
+      background-color: blueviolet;
+    }
+    .inner {
+      width: 200px;
+      height: 100px;
+      background-color: coral;
+    }
+    .text {
+      font-size: 32px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- method 1: use flex -->
+  <div class="outter" style="display: flex; align-items: center; justify-content: center;">
+    <div class="inner"></div>
+  </div>
+  <!-- method 2: use grid -->
+  <div class="outter" style="display: grid; place-items: center;">
+    <div class="inner"></div>
+  </div>
+  <!-- method 3: use absolute position + transform & translate -->
+  <div class="outter" style="position: relative;">
+    <div class="inner" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+  </div>
+  <!-- method 4: 
+    horizontal: set horizontal margin to auto
+    vertical: mannual calculate the suitable padding of parent box
+  -->
+  <div class="outter" style="padding-top: 50px;" >
+    <div class="inner" style="margin: 0px auto;"></div>
+  </div>
+  <!-- to center text, aside from the above methods, you could also do
+    horizontal: set text-align to center
+    vertical: set line-height to be exactly the same as height 
+  -->
+  <div class="outter text" style="line-height: 200px; text-align: center;">
+    something in the way
+  </div>
+</body>
+</html>
