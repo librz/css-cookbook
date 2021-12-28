@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform creates stacking context</title>
+  <style>
+
+    * { box-sizing: border-box; }
+
+    .container {
+      margin: 50px;
+      overflow: auto; 
+      /* setting overflow to auto, so that the margin of child will take effect */
+      background-color: blueviolet;
+      width: 900px;
+      font-size: 20px;
+    }
+
+    .box {
+      width: 400px;
+      height: 200px;
+      margin: 50px;
+    }
+
+    .box-2 {
+      transform: translate(400px); /* try comment out this line & see what happens */
+      padding: 8px;
+      color: white;
+    }
+
+    .gray-box {
+      position: fixed;
+      top: 80px;
+      left: 30px;
+      width: 300px;
+      height: 100px;
+      background: gray;
+      color: white;
+      padding: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box-1" style="background-color: orange;"></div>
+    <div class="box box-2" style="background-color: teal;">
+      I'm transformed, that means, I create my own stacking-context for all my children
+      <div class="gray-box">
+        Although my position is set to fixed, my position are relative to my parent, not the viewport
+      </div>
+    </div>
+    <div class="box box-3" style="background-color: tomato;"></div>
+  </div>
+</body>
+</html>
